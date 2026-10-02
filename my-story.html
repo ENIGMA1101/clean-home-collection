@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#FAF1ED">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>My Story — The Clean Home Collection</title>
+<meta name="description" content="Created by a mum of five, for the beautiful chaos of family life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@300;400;500&family=Allura&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BRAND TOKENS — mirror these in Shopify theme settings
+   ============================================================ */
+:root{
+  color-scheme:only light;
+  --blush:#F2C7C3;
+  --dusty-rose:#D9A9A8;
+  --rose-text:#C98987;
+  --taupe:#DCC5AE;
+  --sage:#D6DDD5;
+  --sage-deep:#8FA08C;
+  --gold:#C7A061;
+  --paper:#FAF1ED;
+  --paper-2:#F5E7E2;
+  --ink:#665652;
+  --ink-soft:#877571;
+  --white:#FFFCFB;
+
+  --f-head:'Cinzel', 'Times New Roman', serif;
+  --f-body:'Montserrat', system-ui, sans-serif;
+  --f-script:'Allura', cursive;
+
+  --wrap:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#FAF1ED;color-scheme:only light}
+@media (prefers-color-scheme:dark){html,body{background:#FAF1ED!important;color:#665652!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+h1,h2,h3{font-family:var(--f-head);font-weight:400;line-height:1.2;letter-spacing:.04em}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+h3{font-size:1.25rem}
+.spaced{font-family:var(--f-body);font-weight:400;text-transform:uppercase;letter-spacing:.32em;font-size:.72rem}
+.script{font-family:var(--f-script);color:var(--gold);font-weight:400;line-height:1}
+.lede{color:var(--ink-soft);max-width:34em}
+
+.btn{display:inline-block;border:1px solid var(--dusty-rose);background:var(--dusty-rose);color:var(--ink);padding:15px 34px;text-decoration:none;font-family:var(--f-body);font-weight:400;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;border-radius:40px;transition:background .25s,color .25s}
+.btn:hover{background:var(--blush);border-color:var(--blush)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--dusty-rose);border-color:var(--dusty-rose)}
+.plan.feature .btn{background:var(--white);border-color:var(--white)}
+.plan.feature .btn:hover{background:var(--dusty-rose);border-color:var(--dusty-rose)}
+
+/* Divider with heart — straight from the brand board */
+.heart-rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--rose-text)}
+.heart-rule::before,.heart-rule::after{content:"";height:1px;width:70px;background:var(--dusty-rose)}
+.heart-rule svg{width:14px;height:14px}
+
+/* ---------- Announcement bar ---------- */
+.announce{background:var(--dusty-rose);color:var(--ink);text-align:center;padding:9px 16px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+
+/* ---------- Header ---------- */
+header.site{position:sticky;top:0;z-index:20;background:rgba(250,241,237,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,137,135,.18)}
+.head-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
+.nav{display:flex;gap:24px;list-style:none;white-space:nowrap}
+.nav a{text-decoration:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+.nav a:hover{color:var(--rose-text)}
+.brand-mini{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mini svg{width:44px;height:44px}
+.brand-mini span{font-family:var(--f-head);font-size:.95rem;letter-spacing:.14em}
+.head-actions{display:flex;justify-content:flex-end;align-items:center;gap:20px}
+.icon-btn{background:none;border:0;color:var(--ink);display:flex;align-items:center;gap:6px;font-size:.72rem;letter-spacing:.14em}
+.icon-btn svg{width:20px;height:20px}
+.cart-count{background:var(--rose-text);color:#fff;border-radius:50%;width:18px;height:18px;font-size:.62rem;display:grid;place-items:center;letter-spacing:0}
+.menu-toggle{display:none}
+
+/* ---------- Hero ---------- */
+.hero{text-align:center;padding:64px 0 90px;position:relative;overflow:hidden}
+.lockup{width:min(430px,82vw);margin:0 auto}
+.lockup .arc{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s .2s ease-out forwards}
+.lockup .mono,.lockup .leaf{opacity:0;animation:fade 1.4s .9s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+.hero h1{font-size:clamp(2rem,5.4vw,3.9rem);letter-spacing:.08em;margin-top:6px}
+.hero .spaced.coll{color:var(--rose-text);font-size:clamp(.9rem,1.6vw,1.2rem);letter-spacing:.5em;margin:10px 0 16px;display:flex;align-items:center;justify-content:center;gap:22px}
+.hero .spaced.coll::before,.hero .spaced.coll::after{content:"";height:1px;width:clamp(40px,10vw,120px);background:var(--dusty-rose)}
+.hero .script{font-size:clamp(2.2rem,4.6vw,3.3rem);margin:22px 0 18px}
+.hero p.lede{margin:0 auto 34px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.sparkle{position:absolute;color:var(--gold);opacity:.7}
+
+/* ---------- Photo band ---------- */
+.band{display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:var(--white)}
+.band figure{position:relative;min-height:420px;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.band .copy{padding:clamp(40px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
+.band .copy h2{margin-bottom:18px}
+.band .copy p{color:var(--ink-soft);margin-bottom:14px;max-width:30em}
+
+/* ---------- Our story ---------- */
+.story{background:var(--paper-2);position:relative;overflow:hidden}
+.story-in{max-width:640px;margin:0 auto;text-align:center}
+.story h2{font-family:var(--f-script);color:var(--gold);font-size:clamp(2.8rem,6vw,4.2rem);letter-spacing:0;line-height:1.1}
+.story .heart-rule{margin:18px 0 38px}
+.story p{font-family:var(--f-head);font-size:1.05rem;line-height:1.95;margin-bottom:22px;letter-spacing:.01em}
+.story .mess{color:var(--rose-text)}
+.story blockquote{margin:44px 0;padding:34px 10px;border-top:1px solid var(--dusty-rose);border-bottom:1px solid var(--dusty-rose)}
+.story blockquote p{font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.5;margin:0}
+.story .signoff{font-family:var(--f-script);color:var(--gold);font-size:clamp(2.2rem,4.4vw,3rem);line-height:1.1;margin-top:34px;display:flex;align-items:center;justify-content:center;gap:10px}
+.story .signoff svg{width:20px;height:20px;color:var(--rose-text)}
+.story .sprig-l,.story .sprig-r{position:absolute;width:110px;height:230px;top:60px;opacity:.8}
+.story .sprig-l{left:4%;transform:rotate(-14deg)}
+.story .sprig-r{right:4%;transform:scale(-1,1) rotate(-14deg)}
+@media (max-width:940px){.story .sprig-l,.story .sprig-r{display:none}}
+
+/* ---------- How it works (a real sequence, so numbered) ---------- */
+section.pad{padding:clamp(70px,9vw,120px) 0}
+.center{text-align:center}
+.center .lede{margin:14px auto 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:60px;counter-reset:s;list-style:none}
+.steps li{text-align:center;position:relative}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--f-head);font-size:1.4rem;color:var(--rose-text);width:62px;height:62px;border:1px solid var(--dusty-rose);border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;background:var(--white)}
+.steps li:not(:last-child)::after{content:"";position:absolute;top:31px;left:calc(50% + 50px);right:calc(-50% + 50px);height:1px;background:linear-gradient(90deg,var(--dusty-rose) 50%,transparent 50%);background-size:8px 1px}
+.steps h3{margin-bottom:10px}
+.steps p{color:var(--ink-soft);font-size:.95rem;max-width:22em;margin:0 auto}
+
+/* ---------- Plans ---------- */
+.plans-sec{background:var(--paper-2)}
+.freq{display:inline-flex;border:1px solid var(--dusty-rose);border-radius:40px;padding:4px;margin-top:30px;background:var(--white)}
+.freq button{border:0;background:none;padding:10px 22px;border-radius:40px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.freq button[aria-pressed="true"]{background:var(--blush);color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;align-items:stretch}
+.plan{background:var(--white);padding:44px 34px 38px;text-align:center;display:flex;flex-direction:column;border-radius:200px 200px 6px 6px;border:1px solid rgba(217,169,168,.45)}
+.plan.feature{background:var(--blush);border-color:var(--blush)}
+.plan .tag{font-family:var(--f-script);color:var(--gold);font-size:1.9rem;height:30px;margin-bottom:6px}
+.plan h3{font-size:1.45rem;letter-spacing:.1em;margin-bottom:6px}
+.plan .fit{color:var(--ink-soft);font-size:.86rem;margin-bottom:22px}
+.price{font-family:var(--f-head);font-size:2.7rem;line-height:1}
+.price small{font-family:var(--f-body);font-size:.8rem;color:var(--ink-soft);letter-spacing:.06em}
+.save{font-size:.76rem;color:var(--sage-deep);min-height:1.4em;margin:6px 0 22px;font-weight:400}
+.plan ul{list-style:none;text-align:left;margin:0 auto 30px;font-size:.92rem;flex:1}
+.plan li{padding:9px 0 9px 26px;border-bottom:1px solid rgba(75,63,61,.08);position:relative}
+.plan li::before{content:"";position:absolute;left:4px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--dusty-rose)}
+.plan.feature li::before{background:var(--white)}
+.plan .btn{align-self:center}
+
+/* ---------- Products ---------- */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:56px}
+.prod{text-align:center}
+.bottle{aspect-ratio:3/4;background:var(--white);display:grid;place-items:center;margin-bottom:18px;position:relative;border-radius:4px}
+.bottle svg{height:78%}
+.prod h3{font-size:1rem;letter-spacing:.12em;margin-bottom:4px}
+.prod p{font-size:.84rem;color:var(--ink-soft)}
+
+/* ---------- Scents ---------- */
+.scents{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(201,137,135,.3)}
+.scent{padding:36px 24px 10px;text-align:center;border-right:1px solid rgba(201,137,135,.3)}
+.scent:last-child{border-right:0}
+.swatch{width:74px;height:74px;border-radius:50%;margin:0 auto 18px}
+.scent .script{font-size:2.2rem;color:var(--ink);display:block;margin-bottom:8px}
+.scent p{font-size:.86rem;color:var(--ink-soft)}
+
+/* ---------- Unboxing ---------- */
+.unbox{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.unbox figure{aspect-ratio:1;overflow:hidden;border-radius:50% 50% 6px 6px}
+.unbox img{width:100%;height:100%;object-fit:cover}
+.unbox h2{margin-bottom:18px}
+.unbox p{color:var(--ink-soft);margin-bottom:16px;max-width:30em}
+.unbox .script{font-size:2.4rem;margin-top:8px}
+
+/* ---------- Reviews ---------- */
+.reviews-sec{background:var(--sage)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:54px}
+.quotes blockquote{text-align:center}
+.quotes .stars{color:var(--gold);letter-spacing:.3em;font-size:.9rem;margin-bottom:14px}
+.quotes q{font-family:var(--f-head);font-size:1.08rem;line-height:1.6;display:block;quotes:none}
+.quotes cite{display:block;margin-top:16px;font-style:normal;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:760px;margin:50px auto 0}
+.faq details{border-bottom:1px solid rgba(201,137,135,.35)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-family:var(--f-head);font-size:1.08rem;letter-spacing:.03em;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--rose-text);font-family:var(--f-body);font-size:1.4rem;transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--ink-soft);max-width:40em}
+
+/* ---------- Newsletter ---------- */
+.news{background:var(--blush);text-align:center}
+.news form{display:flex;max-width:480px;margin:30px auto 0;background:var(--white);border:1px solid var(--dusty-rose);border-radius:40px;padding:4px 6px 4px 20px}
+.news input{flex:1;border:0;background:#FFFCFB;padding:14px 4px;font:inherit;color:var(--ink)}
+.news input::placeholder{color:var(--ink-soft)}
+.news input:focus{outline:none}
+.news button{border:0;background:var(--dusty-rose);border-radius:40px;padding:0 22px !important;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;padding:0 6px;color:var(--ink)}
+.news .msg{margin-top:14px;font-size:.88rem;min-height:1.5em}
+
+/* ---------- Footer ---------- */
+footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color:var(--ink);padding:70px 0 30px}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+.foot h4{font-family:var(--f-body);font-weight:500;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rose-text);margin-bottom:18px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:9px;font-size:.9rem}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot .script{font-size:2rem;margin-top:10px;color:var(--gold)}
+.legal{margin-top:56px;padding-top:24px;border-top:1px solid rgba(201,137,135,.3);display:flex;justify-content:space-between;font-size:.76rem;flex-wrap:wrap;gap:10px}
+
+/* ---------- Cart drawer ---------- */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,200px);background:var(--blush);color:var(--ink);border:1px solid var(--dusty-rose);padding:16px 26px;border-radius:40px;font-size:.86rem;transition:transform .4s ease;z-index:50;box-shadow:0 10px 30px rgba(201,137,135,.3)}
+.toast{visibility:hidden}
+.toast.show{transform:translate(-50%,0);visibility:visible}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){.nav{gap:18px}.nav a{letter-spacing:.14em}}
+@media (max-width:940px){
+  .nav{display:none}
+  .menu-toggle{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:24px;gap:18px;border-bottom:1px solid rgba(201,137,135,.3)}
+  .brand-mini span{display:none}
+  .band,.unbox{grid-template-columns:1fr}
+  .band figure{min-height:340px}
+  .steps,.plans,.quotes{grid-template-columns:1fr;gap:34px}
+  .steps li::after{display:none}
+  .plans{max-width:420px;margin-left:auto;margin-right:auto}
+  .prod-grid,.scents{grid-template-columns:repeat(2,1fr)}
+  .scent:nth-child(2){border-right:0}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .foot{grid-template-columns:1fr}
+  .head-actions .label{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .lockup .arc{stroke-dashoffset:0}
+  .lockup .mono,.lockup .leaf{opacity:1}
+}
+
+/* ================= MY STORY PAGE ================= */
+.nav a[aria-current="page"]{color:var(--rose-text);border-bottom:1px solid var(--dusty-rose);padding-bottom:3px}
+.story-hero{text-align:center;padding:80px 0 70px;position:relative;overflow:hidden}
+.story-hero .sprig-l,.story-hero .sprig-r{position:absolute;width:120px;height:250px;top:40px;opacity:.85}
+.story-hero .sprig-l{left:8%;transform:rotate(-14deg)}
+.story-hero .sprig-r{right:8%;transform:scale(-1,1) rotate(-14deg)}
+.story-hero .mono-sm{width:86px;height:86px;margin:0 auto 18px}
+.story-hero h1{font-size:clamp(2.6rem,7vw,5rem);letter-spacing:.14em}
+.story-hero .heart-rule{margin:20px 0 26px}
+.story-hero .script{font-size:clamp(2.1rem,4.6vw,3.3rem);max-width:15em;margin:0 auto}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,90px);align-items:center}
+.split figure{aspect-ratio:4/5;overflow:hidden;border-radius:220px 220px 6px 6px;border:1px solid rgba(217,169,168,.5)}
+.split figure img{width:100%;height:100%;object-fit:cover}
+.prose p{font-family:var(--f-head);font-size:1.12rem;line-height:1.95;margin-bottom:24px;max-width:30em}
+.prose p.first::first-letter{font-size:3.6em;float:left;line-height:.9;margin:6px 12px 0 0;color:var(--rose-text)}
+.mess-list{display:flex;flex-wrap:wrap;gap:10px;margin:-6px 0 30px}
+.mess-list span{background:var(--blush);border-radius:40px;padding:6px 16px;font-size:.8rem;letter-spacing:.06em}
+.promise{background:var(--sage);text-align:center}
+.promise p{font-family:var(--f-head);font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.45;max-width:24em;margin:0 auto;letter-spacing:.02em}
+.promise .heart-rule{margin-bottom:30px}
+.promise .heart-rule::before,.promise .heart-rule::after{background:var(--sage-deep)}
+.promise .heart-rule{color:var(--sage-deep)}
+.promise small{display:block;margin-top:26px;font-family:var(--f-body);font-size:1rem;color:var(--ink-soft);max-width:34em;margin-left:auto;margin-right:auto;line-height:1.8}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:10px}
+.trio div{text-align:center;padding:44px 26px;background:var(--white);border:1px solid rgba(217,169,168,.45);border-radius:160px 160px 6px 6px}
+.trio svg{width:46px;height:46px;margin:0 auto 18px;color:var(--rose-text)}
+.trio h3{font-size:1.2rem;letter-spacing:.1em}
+.welcome{text-align:center;background:var(--blush)}
+.welcome .script{font-size:clamp(2.4rem,5.6vw,4rem);color:var(--ink);display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.welcome .script svg{width:26px;height:26px;color:var(--rose-text)}
+.welcome p.lede{margin:18px auto 34px}
+.welcome .btn{background:var(--white);border-color:var(--white)}
+.welcome .btn:hover{background:var(--dusty-rose);border-color:var(--dusty-rose)}
+@media (max-width:940px){
+  .split,.trio{grid-template-columns:1fr}
+  .split figure{max-width:420px;margin:0 auto}
+  .story-hero .sprig-l,.story-hero .sprig-r{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.2 0 3.7 1.3 5.3 3.2 1.6-1.9 3.1-3.2 5.3-3.2 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="sprig" viewBox="0 0 60 120">
+      <g fill="none" stroke="#C98987" stroke-width="1.1">
+        <path d="M30 118 C28 90 30 50 40 6"/>
+        <path d="M31 96 C18 92 12 82 12 74 C22 76 29 84 31 96Z" fill="#F2C7C3"/>
+        <path d="M31 76 C44 72 50 62 50 54 C40 56 33 64 31 76Z" fill="#F2C7C3"/>
+        <path d="M33 56 C22 50 18 40 19 32 C28 36 33 44 33 56Z" fill="#F2C7C3"/>
+        <path d="M36 36 C46 32 50 22 49 16 C41 18 37 26 36 36Z" fill="#F2C7C3"/>
+      </g>
+    </symbol>
+    <symbol id="monogram" viewBox="0 0 100 100">
+      <text x="30" y="62" font-family="Cinzel, serif" font-size="58" fill="#D9A9A8">S</text>
+      <text x="44" y="80" font-family="Cinzel, serif" font-size="58" fill="#C98987">C</text>
+      <use href="#heart" x="58" y="50" width="11" height="11" style="color:#C98987"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="announce">Free delivery on every subscription box · Pause or cancel anytime</div>
+
+<!-- SHOPIFY: sections/header.liquid -->
+<header class="site">
+  <div class="wrap head-in">
+    <button class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+    <ul class="nav" id="nav">
+      <li><a href="my-story.html" aria-current="page">My story</a></li>
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#plans">Subscribe</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html" class="brand-mini" aria-label="The Clean Home Collection home">
+      <svg><use href="#monogram"/></svg>
+      <span>THE CLEAN HOME</span>
+    </a>
+    <div class="head-actions">
+      <a href="#" class="icon-btn" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span class="label">Account</span></a>
+      <button class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- SHOPIFY: templates/page.my-story.json → sections/story-hero.liquid -->
+<section class="story-hero">
+  <svg class="sprig-l" aria-hidden="true"><use href="#sprig"/></svg>
+  <svg class="sprig-r" aria-hidden="true"><use href="#sprig"/></svg>
+  <div class="wrap">
+    <svg class="mono-sm" aria-hidden="true"><use href="#monogram"/></svg>
+    <h1>MY STORY</h1>
+    <div class="heart-rule" aria-hidden="true"><svg><use href="#heart"/></svg></div>
+    <p class="script">Created by a mum of five, for the beautiful chaos of family life</p>
+  </div>
+</section>
+
+<!-- SHOPIFY: sections/image-with-text.liquid -->
+<section class="pad" style="background:var(--white)">
+  <div class="wrap split">
+    <figure><img loading="lazy" src="images/products.jpg" alt="Clean Home Collection multi-purpose cleaner and hand wash in glass bottles"></figure>
+    <div class="prose">
+      <p class="first">I know what real family life looks like — fingerprints, crumbs, sticky surfaces, muddy footprints and a home that somehow needs cleaning again five minutes later.</p>
+      <p>The Clean Home Collection was created because I wanted cleaning products that worked beautifully, smelled beautiful and looked beautiful too.</p>
+      <p>Products designed for real homes, real families and real life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOPIFY: sections/rich-text.liquid -->
+<section class="pad promise">
+  <div class="wrap">
+    <div class="heart-rule" aria-hidden="true"><svg><use href="#heart"/></svg></div>
+    <p>Because cleaning isn’t about having a perfect home.</p>
+    <small>It’s about those little everyday resets that make your home feel fresh, clean and cared for.</small>
+  </div>
+</section>
+
+<!-- SHOPIFY: sections/multicolumn.liquid -->
+<section class="pad">
+  <div class="wrap trio">
+    <div>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M24 42c-8-6-12-12-12-19 0-6 5-10 12-3 7-7 12-3 12 3 0 7-4 13-12 19z"/><path d="M24 20v14M19 28l5 4 5-4"/></svg>
+      <h3>Beautiful products</h3>
+    </div>
+    <div>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M24 4l3 11 11 3-11 3-3 11-3-11-11-3 11-3z"/><path d="M38 30l1.5 4.5L44 36l-4.5 1.5L38 42l-1.5-4.5L32 36l4.5-1.5z"/></svg>
+      <h3>Effective cleaning</h3>
+    </div>
+    <div>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 22L24 9l16 13v18H8z"/><path d="M24 36c-4-3-6-5.5-6-8 0-2.5 3-4 6-1 3-3 6-1.5 6 1 0 2.5-2 5-6 8z"/></svg>
+      <h3>Real family life</h3>
+    </div>
+  </div>
+</section>
+
+<!-- SHOPIFY: sections/rich-text.liquid + button -->
+<section class="pad welcome">
+  <div class="wrap">
+    <p class="script">Welcome to The Clean Home Collection <svg aria-hidden="true"><use href="#heart"/></svg></p>
+    <p class="lede">From my busy family to yours — choose your first box and make those little everyday resets a lot more lovely.</p>
+    <a href="index.html#plans" class="btn">Choose my box</a>
+  </div>
+</section>
+
+</main>
+
+<!-- SHOPIFY: sections/footer.liquid -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <p style="font-family:var(--f-head);letter-spacing:.14em;font-size:1.1rem">THE CLEAN HOME</p>
+        <p class="spaced" style="color:var(--ink-soft);margin-top:4px">Collection</p>
+        <p class="script">Beautifully Clean, Every Day</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="index.html#plans">Subscriptions</a></li><li><a href="index.html#products">Products</a></li><li><a href="#">Gift a box</a></li><li><a href="#">Refills</a></li></ul></div>
+      <div><h4>Help</h4><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="#">Delivery</a></li><li><a href="#">Manage subscription</a></li><li><a href="#">Contact us</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">Pinterest</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 The Clean Home Collection</span><span><a href="#">Privacy</a> &nbsp;&nbsp; <a href="#">Terms</a></span></div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded',false)}));
+
+</script>
+</body>
+</html>
