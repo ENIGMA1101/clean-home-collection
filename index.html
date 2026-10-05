@@ -13,6 +13,7 @@
 <meta property="og:title" content="The Clean Home Collection | Coming January 2027">
 <meta property="og:description" content="Beautiful cleaning products for real family life, delivered every month. Launching January 2027. Register your interest.">
 <meta property="og:url" content="https://www.thecleanhomecollection.co.uk/">
+<link rel="canonical" href="https://www.thecleanhomecollection.co.uk/">
 <meta property="og:image" content="https://www.thecleanhomecollection.co.uk/images/gift-box.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,6 +70,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
 .foot-simple .script{font-size:2rem;margin-top:10px}
 .fs-links{list-style:none;display:grid;gap:10px;font-size:.9rem}
 .fs-links a{text-decoration:none}
+.fs-social{grid-auto-flow:column;gap:18px}
 .fs-links a:hover{color:var(--rose-text);text-decoration:underline;text-underline-offset:4px}
 .legal{margin-top:40px;padding-top:20px;border-top:1px solid rgba(185,112,109,.25);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--ink-soft)}
 
@@ -77,6 +79,8 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
 }
 @media (max-width:440px){
   .announce{font-size:.62rem;letter-spacing:.08em;padding-inline:10px}
+  .ann-date{display:none}
+  .signup h2{letter-spacing:.12em}
   .btn-sm .long{display:none}.btn-sm .short{display:inline}
   .nav-simple{gap:14px}
 }
@@ -111,12 +115,15 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
 .perks svg{width:12px;height:12px;color:var(--rose-text);flex:none}
 .consent{font-size:.78rem;color:var(--ink-soft);margin-top:14px;max-width:46em;margin-inline:auto}
 .consent a{text-underline-offset:3px}
-.form-msg{margin-top:14px;font-size:.92rem;min-height:1.4em}
+.free-note{margin-top:10px;font-size:.84rem;color:var(--ink-soft);font-weight:500}
+.form-msg{margin-top:6px;font-size:.92rem;min-height:1.4em}
+.form-msg:empty{min-height:0;margin:0}
+.thanks .survey-btn{margin-top:18px}
 .form-msg.error{color:#A8432F}
 .thanks{display:none;background:var(--white);border:1px solid var(--dusty-rose);border-radius:24px;padding:28px 24px}
-.thanks .script{font-size:2.6rem}
+.thanks p.script{font-size:2.6rem;color:var(--gold);margin-top:0}
 .thanks p{margin-top:8px;color:var(--ink-soft)}
-.signup.done form,.signup.done .perks,.signup.done .consent{display:none}
+.signup.done form,.signup.done .perks,.signup.done .consent,.signup.done h2{display:none}
 .signup.done .thanks{display:block}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .sparkle{position:absolute;color:var(--gold);opacity:.7}
@@ -174,7 +181,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
     </symbol>
   </defs>
 </svg>
-<div class="announce">Launching January 2027 &nbsp;·&nbsp; <a href="#register">Register your interest</a></div>
+<div class="announce"><span class="ann-date">Launching January 2027 &nbsp;·&nbsp; </span><a href="#register">Register for 15% off your first box</a></div>
 <header class="site">
   <div class="wrap head-in">
     <nav class="nav-simple" aria-label="Main">
@@ -214,7 +221,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
     <p class="lede">Beautiful cleaning products for real family life, delivered to your door every month.</p>
 
     <div class="signup" id="register">
-      <h2>Register your interest</h2>
+      <h2>Register for 15% off your first box</h2>
       <form id="signupForm" action="#" method="post" target="signupFrame" novalidate>
         <div class="field-row">
           <label for="email" class="sr">Email address</label>
@@ -224,17 +231,19 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" type="text" tabindex="-1" autocomplete="off"></div>
           <button class="btn" type="submit" id="signupBtn">Register my interest</button>
         </div>
+        <p class="free-note">Free to register. No payment needed.</p>
         <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
       </form>
       <ul class="perks">
         <li><svg aria-hidden="true"><use href="#heart"/></svg>Be the first to know when we launch</li>
-        <li><svg aria-hidden="true"><use href="#heart"/></svg>Early access to our first boxes</li>
+        <li><svg aria-hidden="true"><use href="#heart"/></svg>15% off your first box as a founding member</li>
         <li><svg aria-hidden="true"><use href="#heart"/></svg>Help choose our launch scents</li>
       </ul>
-      <p class="consent">By registering, you agree to receive emails from The Clean Home Collection about our launch and offers. You can unsubscribe at any time. Read our <a href="privacy.html">privacy notice</a>.</p>
+      <p class="consent">By registering, you agree to receive emails from The Clean Home Collection about our launch and offers. You can unsubscribe at any time. Read our <a href="privacy.html">privacy notice</a>. The founding-member discount is 15% off your first box of a subscription, for everyone who registers before we launch.</p>
       <div class="thanks" id="thanks" tabindex="-1">
         <p class="script">Thank you!</p>
         <p>You're nearly on the list. Check your inbox, and your spam folder, for an email asking you to confirm your address.</p>
+        <p>Once you've confirmed, you're a founding member. We'll email your discount code when we launch.</p>
       </div>
       <noscript><p class="consent">Please turn on JavaScript to register your interest.</p></noscript>
     </div>
@@ -280,7 +289,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
 <section class="closing">
   <div class="wrap">
     <h2>Be the first to know</h2>
-    <p>Register your interest and we'll email you as soon as the first boxes are ready in January 2027.</p>
+    <p>Register now for 15% off your first box. We'll email you as soon as the first boxes are ready in January 2027.</p>
     <a class="btn" href="#register" data-focus-signup>Register your interest</a>
   </div>
 </section>
