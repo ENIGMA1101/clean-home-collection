@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#FAF1ED">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Privacy notice | The Clean Home Collection</title>
 <meta name="description" content="How The Clean Home Collection uses your email address.">
 <meta property="og:type" content="website">
@@ -61,7 +61,7 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(250,241,237,.95);ba
 .brand-mini span{font-family:var(--f-head);font-size:.95rem;letter-spacing:.14em;white-space:nowrap}
 .head-actions{display:flex;justify-content:flex-end}
 .btn-sm{padding:10px 18px;font-size:.66rem;letter-spacing:.16em}
-.btn-sm .short{display:none}
+.btn-sm .short,.nav-simple .short{display:none}
 
 footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25);padding-block:56px 26px}
 .foot-simple{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
@@ -81,7 +81,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
   .announce{font-size:.62rem;letter-spacing:.08em;padding-inline:10px}
   .ann-date{display:none}
   .signup h2{letter-spacing:.12em}
-  .btn-sm .long{display:none}.btn-sm .short{display:inline}
+  .btn-sm .long,.nav-simple .long{display:none}.btn-sm .short,.nav-simple .short{display:inline}
   .nav-simple{gap:14px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -118,18 +118,19 @@ mark.fill{background:#FFE7A8;color:var(--ink);padding:0 4px;border-radius:3px}
     </symbol>
   </defs>
 </svg>
-<div class="announce"><span class="ann-date">Launching January 2027 &nbsp;·&nbsp; </span><a href="index.html#register">Register for 15% off your first box</a></div>
+<div class="announce"><span class="ann-date">Launching January 2027 &nbsp;·&nbsp; </span><a href="/#register">Register for 15% off your first box</a></div>
 <header class="site">
   <div class="wrap head-in">
     <nav class="nav-simple" aria-label="Main">
-      <a href="my-story.html">My story</a>
+      <a href="/my-story.html">My story</a>
+      <a href="/blogs/cleaning-tips/"><span class="long">Cleaning tips</span><span class="short">Tips</span></a>
     </nav>
-    <a href="index.html" class="brand-mini" aria-label="The Clean Home Collection home">
+    <a href="/" class="brand-mini" aria-label="The Clean Home Collection home">
       <svg aria-hidden="true"><use href="#monogram"/></svg>
       <span>THE CLEAN HOME</span>
     </a>
     <div class="head-actions">
-      <a class="btn btn-sm" href="index.html#register" data-focus-signup><span class="long">Register interest</span><span class="short">Register</span></a>
+      <a class="btn btn-sm" href="/#register" data-focus-signup><span class="long">Register interest</span><span class="short">Register</span></a>
     </div>
   </div>
 </header>
@@ -176,9 +177,10 @@ mark.fill{background:#FFE7A8;color:var(--ink);padding:0 4px;border-radius:3px}
         <p class="script">Beautifully Clean, Every Day</p>
       </div>
       <ul class="fs-links">
-        <li><a href="index.html#register" data-focus-signup>Register your interest</a></li>
-        <li><a href="my-story.html">My story</a></li>
-        <li><a href="privacy.html">Privacy notice</a></li>
+        <li><a href="/#register" data-focus-signup>Register your interest</a></li>
+        <li><a href="/my-story.html">My story</a></li>
+        <li><a href="/blogs/cleaning-tips/">Cleaning tips</a></li>
+        <li><a href="/privacy.html">Privacy notice</a></li>
         <li><a href="mailto:info@thecleanhomecollection.co.uk">info@thecleanhomecollection.co.uk</a></li>
       </ul>
       <ul class="fs-links fs-social" aria-label="Follow us"><li><a href="https://www.instagram.com/the.clean.home.collection/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595348270891" target="_blank" rel="noopener">Facebook</a></li></ul>

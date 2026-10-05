@@ -9,7 +9,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.thecleanhomecollection.co.uk/my-story.html">
 <title>My Story | The Clean Home Collection</title>
-<meta name="description" content="Created by a mum of five, for the beautiful chaos of family life.">
+<meta name="description" content="The story behind The Clean Home Collection: family cleaning products created by Sam Carless, a busy mum of five, for real homes and real family life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@300;400;500&family=Allura&display=swap" rel="stylesheet">
@@ -301,7 +301,7 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(250,241,237,.95);ba
 .brand-mini span{font-family:var(--f-head);font-size:.95rem;letter-spacing:.14em;white-space:nowrap}
 .head-actions{display:flex;justify-content:flex-end}
 .btn-sm{padding:10px 18px;font-size:.66rem;letter-spacing:.16em}
-.btn-sm .short{display:none}
+.btn-sm .short,.nav-simple .short{display:none}
 
 footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25);padding-block:56px 26px}
 .foot-simple{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
@@ -321,7 +321,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
   .announce{font-size:.62rem;letter-spacing:.08em;padding-inline:10px}
   .ann-date{display:none}
   .signup h2{letter-spacing:.12em}
-  .btn-sm .long{display:none}.btn-sm .short{display:inline}
+  .btn-sm .long,.nav-simple .long{display:none}.btn-sm .short,.nav-simple .short{display:inline}
   .nav-simple{gap:14px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -350,22 +350,24 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
   </defs>
 </svg>
 
-<div class="announce"><span class="ann-date">Launching January 2027 &nbsp;·&nbsp; </span><a href="index.html#register">Register for 15% off your first box</a></div>
+<div class="announce"><span class="ann-date">Launching January 2027 &nbsp;·&nbsp; </span><a href="/#register">Register for 15% off your first box</a></div>
 
 <header class="site">
   <div class="wrap head-in">
     <nav class="nav-simple" aria-label="Main">
-      <a href="my-story.html" aria-current="page">My story</a>
+      <a href="/my-story.html" aria-current="page">My story</a>
+      <a href="/blogs/cleaning-tips/"><span class="long">Cleaning tips</span><span class="short">Tips</span></a>
     </nav>
-    <a href="index.html" class="brand-mini" aria-label="The Clean Home Collection home">
+    <a href="/" class="brand-mini" aria-label="The Clean Home Collection home">
       <svg aria-hidden="true"><use href="#monogram"/></svg>
       <span>THE CLEAN HOME</span>
     </a>
     <div class="head-actions">
-      <a class="btn btn-sm" href="index.html#register" data-focus-signup><span class="long">Register interest</span><span class="short">Register</span></a>
+      <a class="btn btn-sm" href="/#register" data-focus-signup><span class="long">Register interest</span><span class="short">Register</span></a>
     </div>
   </div>
 </header>
+
 
 
 
@@ -435,7 +437,7 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
   <div class="wrap">
     <p class="script">Welcome to The Clean Home Collection <svg aria-hidden="true"><use href="#heart"/></svg></p>
     <p class="lede">From my busy family to yours. We launch in January 2027. Register now for 15% off your first box.</p>
-    <a href="index.html#register" class="btn">Register your interest</a>
+    <a href="/#register" class="btn">Register your interest</a>
   </div>
 </section>
 
@@ -450,9 +452,10 @@ footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25)
         <p class="script">Beautifully Clean, Every Day</p>
       </div>
       <ul class="fs-links">
-        <li><a href="index.html#register" data-focus-signup>Register your interest</a></li>
-        <li><a href="my-story.html">My story</a></li>
-        <li><a href="privacy.html">Privacy notice</a></li>
+        <li><a href="/#register" data-focus-signup>Register your interest</a></li>
+        <li><a href="/my-story.html">My story</a></li>
+        <li><a href="/blogs/cleaning-tips/">Cleaning tips</a></li>
+        <li><a href="/privacy.html">Privacy notice</a></li>
         <li><a href="mailto:info@thecleanhomecollection.co.uk">info@thecleanhomecollection.co.uk</a></li>
       </ul>
       <ul class="fs-links fs-social" aria-label="Follow us"><li><a href="https://www.instagram.com/the.clean.home.collection/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595348270891" target="_blank" rel="noopener">Facebook</a></li></ul>
