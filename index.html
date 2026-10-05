@@ -1,257 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="only light">
-<meta name="supported-color-schemes" content="light">
 <meta name="theme-color" content="#FAF1ED">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<title>The Clean Home Collection — Monthly Cleaning Subscription</title>
-<meta name="description" content="Beautiful, gently scented cleaning essentials delivered to your door every month.">
+<title>The Clean Home Collection | Coming January 2027</title>
+<meta name="description" content="Beautiful cleaning products for real family life, delivered every month. Launching January 2027. Register your interest.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Clean Home Collection">
+<meta property="og:title" content="The Clean Home Collection | Coming January 2027">
+<meta property="og:description" content="Beautiful cleaning products for real family life, delivered every month. Launching January 2027. Register your interest.">
+<meta property="og:url" content="https://www.thecleanhomecollection.co.uk/">
+<meta property="og:image" content="https://www.thecleanhomecollection.co.uk/images/gift-box.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@300;400;500&family=Allura&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   BRAND TOKENS — mirror these in Shopify theme settings
-   ============================================================ */
+/* Brand tokens (from the brand board). Light only, by request. */
 :root{
   color-scheme:only light;
-  --blush:#F2C7C3;
-  --dusty-rose:#D9A9A8;
-  --rose-text:#C98987;
-  --taupe:#DCC5AE;
-  --sage:#D6DDD5;
-  --sage-deep:#8FA08C;
-  --gold:#C7A061;
-  --paper:#FAF1ED;
-  --paper-2:#F5E7E2;
-  --ink:#665652;
-  --ink-soft:#877571;
-  --white:#FFFCFB;
-
-  --f-head:'Cinzel', 'Times New Roman', serif;
-  --f-body:'Montserrat', system-ui, sans-serif;
-  --f-script:'Allura', cursive;
-
-  --wrap:1160px;
+  --blush:#F2C7C3; --dusty-rose:#D9A9A8; --rose-text:#B9706D; --taupe:#DCC5AE;
+  --sage:#D6DDD5; --gold:#B8914F; --paper:#FAF1ED; --paper-2:#F5E7E2;
+  --ink:#5E4E4A; --ink-soft:#7D6B67; --white:#FFFCFB;
+  --f-head:'Cinzel','Times New Roman',serif;
+  --f-body:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-script:'Allura','Brush Script MT',cursive;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:#FAF1ED;color-scheme:only light}
-@media (prefers-color-scheme:dark){html,body{background:#FAF1ED!important;color:#665652!important}}
-body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-button{font:inherit;cursor:pointer}
+button,input{font:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-
-h1,h2,h3{font-family:var(--f-head);font-weight:400;line-height:1.2;letter-spacing:.04em}
-h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
-h3{font-size:1.25rem}
-.spaced{font-family:var(--f-body);font-weight:400;text-transform:uppercase;letter-spacing:.32em;font-size:.72rem}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;line-height:1.2;letter-spacing:.04em;text-wrap:balance}
 .script{font-family:var(--f-script);color:var(--gold);font-weight:400;line-height:1}
 .lede{color:var(--ink-soft);max-width:34em}
-
-.btn{display:inline-block;border:1px solid var(--dusty-rose);background:var(--dusty-rose);color:var(--ink);padding:15px 34px;text-decoration:none;font-family:var(--f-body);font-weight:400;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;border-radius:40px;transition:background .25s,color .25s}
+.btn{display:inline-block;border:1px solid var(--dusty-rose);background:var(--dusty-rose);color:var(--ink);padding:15px 32px;text-decoration:none;font-weight:500;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;border-radius:40px;cursor:pointer;transition:background .25s,border-color .25s}
 .btn:hover{background:var(--blush);border-color:var(--blush)}
-.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent}
 .btn.ghost:hover{background:var(--dusty-rose);border-color:var(--dusty-rose)}
-.plan.feature .btn{background:var(--white);border-color:var(--white)}
-.plan.feature .btn:hover{background:var(--dusty-rose);border-color:var(--dusty-rose)}
-
-/* Divider with heart — straight from the brand board */
 .heart-rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--rose-text)}
 .heart-rule::before,.heart-rule::after{content:"";height:1px;width:70px;background:var(--dusty-rose)}
 .heart-rule svg{width:14px;height:14px}
 
-/* ---------- Announcement bar ---------- */
-.announce{background:var(--dusty-rose);color:var(--ink);text-align:center;padding:9px 16px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
-
-/* ---------- Header ---------- */
-header.site{position:sticky;top:0;z-index:20;background:rgba(250,241,237,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,137,135,.18)}
-.head-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
-.nav{display:flex;gap:24px;list-style:none;white-space:nowrap}
-.nav a{text-decoration:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
-.nav a:hover{color:var(--rose-text)}
+.announce{background:var(--dusty-rose);color:var(--ink);text-align:center;padding:9px 16px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.announce a{text-underline-offset:3px}
+header.site{position:sticky;top:0;z-index:20;background:rgba(250,241,237,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(185,112,109,.18)}
+.head-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;gap:12px}
+.nav-simple{display:flex;gap:24px}
+.nav-simple a{text-decoration:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.nav-simple a:hover,.nav-simple a[aria-current="page"]{color:var(--rose-text)}
 .brand-mini{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand-mini svg{width:44px;height:44px}
-.brand-mini span{font-family:var(--f-head);font-size:.95rem;letter-spacing:.14em}
-.head-actions{display:flex;justify-content:flex-end;align-items:center;gap:20px}
-.icon-btn{background:none;border:0;color:var(--ink);display:flex;align-items:center;gap:6px;font-size:.72rem;letter-spacing:.14em}
-.icon-btn svg{width:20px;height:20px}
-.cart-count{background:var(--rose-text);color:#fff;border-radius:50%;width:18px;height:18px;font-size:.62rem;display:grid;place-items:center;letter-spacing:0}
-.menu-toggle{display:none}
+.brand-mini span{font-family:var(--f-head);font-size:.95rem;letter-spacing:.14em;white-space:nowrap}
+.head-actions{display:flex;justify-content:flex-end}
+.btn-sm{padding:10px 18px;font-size:.66rem;letter-spacing:.16em}
+.btn-sm .short{display:none}
 
-/* ---------- Hero ---------- */
-.hero{text-align:center;padding:64px 0 90px;position:relative;overflow:hidden}
-.lockup{width:min(430px,82vw);margin:0 auto}
-.lockup .arc{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s .2s ease-out forwards}
-.lockup .mono,.lockup .leaf{opacity:0;animation:fade 1.4s .9s ease-out forwards}
+footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25);padding-block:56px 26px}
+.foot-simple{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+.fs-name{font-family:var(--f-head);letter-spacing:.14em;font-size:1.1rem}
+.fs-coll{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.foot-simple .script{font-size:2rem;margin-top:10px}
+.fs-links{list-style:none;display:grid;gap:10px;font-size:.9rem}
+.fs-links a{text-decoration:none}
+.fs-links a:hover{color:var(--rose-text);text-decoration:underline;text-underline-offset:4px}
+.legal{margin-top:40px;padding-top:20px;border-top:1px solid rgba(185,112,109,.25);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--ink-soft)}
+
+@media (max-width:760px){
+  .brand-mini span{display:none}
+}
+@media (max-width:440px){
+  .announce{font-size:.62rem;letter-spacing:.08em;padding-inline:10px}
+  .btn-sm .long{display:none}.btn-sm .short{display:inline}
+  .nav-simple{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Home: one job, register interest. Type-led hero with the brand lockup. */
+.hero{text-align:center;padding-block:48px 72px;position:relative;overflow:hidden}
+.lockup{width:min(300px,64vw);margin:0 auto}
+.lockup .arc{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2s .15s ease-out forwards}
+.lockup .mono,.lockup .leaf{opacity:0;animation:fade 1.2s .7s ease-out forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
-.hero h1{font-size:clamp(2rem,5.4vw,3.9rem);letter-spacing:.08em;margin-top:6px}
-.hero .spaced.coll{color:var(--rose-text);font-size:clamp(.9rem,1.6vw,1.2rem);letter-spacing:.5em;margin:10px 0 16px;display:flex;align-items:center;justify-content:center;gap:22px}
-.hero .spaced.coll::before,.hero .spaced.coll::after{content:"";height:1px;width:clamp(40px,10vw,120px);background:var(--dusty-rose)}
-.hero .script{font-size:clamp(2.2rem,4.6vw,3.3rem);margin:22px 0 18px}
-.hero p.lede{margin:0 auto 34px}
-.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.brandline{font-family:var(--f-head);font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:.14em;margin-top:4px}
+.coll{color:var(--rose-text);font-size:clamp(.72rem,1.3vw,.85rem);letter-spacing:.5em;text-transform:uppercase;margin:6px 0 0;display:flex;align-items:center;justify-content:center;gap:18px;font-weight:500}
+.coll::before,.coll::after{content:"";height:1px;width:clamp(28px,7vw,80px);background:var(--dusty-rose)}
+.coming{margin-top:34px}
+.coming .script{display:block;font-size:clamp(3.4rem,10vw,6.4rem);line-height:.9;color:var(--gold)}
+.coming .date{display:block;font-family:var(--f-head);font-weight:400;font-size:clamp(2.3rem,7.4vw,5.2rem);letter-spacing:.12em;line-height:1.05;margin-top:6px;color:var(--ink)}
+.hero .lede{margin:22px auto 0;font-size:1.05rem}
+
+.signup{margin:34px auto 0;max-width:560px;scroll-margin-top:110px}
+.signup h2{font-family:var(--f-body);font-size:.78rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-text);margin-bottom:12px}
+.field-row{display:flex;gap:8px;background:var(--white);border:1px solid var(--dusty-rose);border-radius:44px;padding:6px;box-shadow:0 10px 30px -18px rgba(185,112,109,.45)}
+.field-row input[type=email]{flex:1;min-width:0;border:0;background:transparent;padding:12px 18px;color:var(--ink);font-size:1rem}
+.field-row input[type=email]::placeholder{color:#9C8A86}
+.field-row input[type=email]:focus{outline:none}
+.field-row:focus-within{border-color:var(--rose-text)}
+.field-row .btn{padding:14px 24px;white-space:nowrap}
+.field-row .btn[disabled]{opacity:.7;cursor:progress}
+.perks{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:18px;font-size:.88rem;color:var(--ink-soft)}
+.perks li{display:flex;align-items:center;gap:8px}
+.perks svg{width:12px;height:12px;color:var(--rose-text);flex:none}
+.consent{font-size:.78rem;color:var(--ink-soft);margin-top:14px;max-width:46em;margin-inline:auto}
+.consent a{text-underline-offset:3px}
+.form-msg{margin-top:14px;font-size:.92rem;min-height:1.4em}
+.form-msg.error{color:#A8432F}
+.thanks{display:none;background:var(--white);border:1px solid var(--dusty-rose);border-radius:24px;padding:28px 24px}
+.thanks .script{font-size:2.6rem}
+.thanks p{margin-top:8px;color:var(--ink-soft)}
+.signup.done form,.signup.done .perks,.signup.done .consent{display:none}
+.signup.done .thanks{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .sparkle{position:absolute;color:var(--gold);opacity:.7}
 
-/* ---------- Photo band ---------- */
-.band{display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:var(--white)}
-.band figure{position:relative;min-height:420px;overflow:hidden}
-.band img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.band .copy{padding:clamp(40px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
-.band .copy h2{margin-bottom:18px}
-.band .copy p{color:var(--ink-soft);margin-bottom:14px;max-width:30em}
+.coming-next{background:var(--white);padding-block:clamp(64px,8vw,104px)}
+.coming-next h2,.closing h2{text-align:center;font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.card{text-align:center;padding:40px 26px 34px;background:var(--paper);border:1px solid rgba(217,169,168,.55);border-radius:180px 180px 8px 8px}
+.card svg{width:40px;height:40px;color:var(--rose-text);margin:0 auto 16px}
+.card h3{font-size:1.1rem;letter-spacing:.08em;margin-bottom:10px}
+.card p{color:var(--ink-soft);font-size:.94rem;max-width:24em;margin:0 auto}
 
-/* ---------- Our story ---------- */
-.story{background:var(--paper-2);position:relative;overflow:hidden}
-.story-in{max-width:640px;margin:0 auto;text-align:center}
-.story h2{font-family:var(--f-script);color:var(--gold);font-size:clamp(2.8rem,6vw,4.2rem);letter-spacing:0;line-height:1.1}
-.story .heart-rule{margin:18px 0 38px}
-.story p{font-family:var(--f-head);font-size:1.05rem;line-height:1.95;margin-bottom:22px;letter-spacing:.01em}
-.story .mess{color:var(--rose-text)}
-.story blockquote{margin:44px 0;padding:34px 10px;border-top:1px solid var(--dusty-rose);border-bottom:1px solid var(--dusty-rose)}
-.story blockquote p{font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.5;margin:0}
-.story .signoff{font-family:var(--f-script);color:var(--gold);font-size:clamp(2.2rem,4.4vw,3rem);line-height:1.1;margin-top:34px;display:flex;align-items:center;justify-content:center;gap:10px}
-.story .signoff svg{width:20px;height:20px;color:var(--rose-text)}
-.story .sprig-l,.story .sprig-r{position:absolute;width:110px;height:230px;top:60px;opacity:.8}
-.story .sprig-l{left:4%;transform:rotate(-14deg)}
-.story .sprig-r{right:4%;transform:scale(-1,1) rotate(-14deg)}
-@media (max-width:940px){.story .sprig-l,.story .sprig-r{display:none}}
+.story-teaser{padding-block:clamp(64px,8vw,104px)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.split figure{aspect-ratio:4/5;max-width:440px;width:100%;justify-self:center;overflow:hidden;border-radius:220px 220px 8px 8px;border:1px solid rgba(217,169,168,.55)}
+.split img{width:100%;height:100%;object-fit:cover}
+.split .script{font-size:clamp(2.6rem,5vw,3.6rem)}
+.split p.body{font-family:var(--f-head);font-size:1.06rem;line-height:1.9;margin-top:18px;max-width:30em}
+.split .btn{margin-top:26px}
 
-/* ---------- How it works (a real sequence, so numbered) ---------- */
-section.pad{padding:clamp(70px,9vw,120px) 0}
-.center{text-align:center}
-.center .lede{margin:14px auto 0}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:60px;counter-reset:s;list-style:none}
-.steps li{text-align:center;position:relative}
-.steps li::before{counter-increment:s;content:counter(s);font-family:var(--f-head);font-size:1.4rem;color:var(--rose-text);width:62px;height:62px;border:1px solid var(--dusty-rose);border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;background:var(--white)}
-.steps li:not(:last-child)::after{content:"";position:absolute;top:31px;left:calc(50% + 50px);right:calc(-50% + 50px);height:1px;background:linear-gradient(90deg,var(--dusty-rose) 50%,transparent 50%);background-size:8px 1px}
-.steps h3{margin-bottom:10px}
-.steps p{color:var(--ink-soft);font-size:.95rem;max-width:22em;margin:0 auto}
+.closing{background:var(--blush);text-align:center;padding-block:clamp(56px,7vw,88px)}
+.closing p{color:var(--ink);margin:12px auto 26px;max-width:34em}
+.closing .btn{background:var(--white);border-color:var(--white)}
+.closing .btn:hover{background:var(--dusty-rose);border-color:var(--dusty-rose)}
 
-/* ---------- Plans ---------- */
-.plans-sec{background:var(--paper-2)}
-.freq{display:inline-flex;border:1px solid var(--dusty-rose);border-radius:40px;padding:4px;margin-top:30px;background:var(--white)}
-.freq button{border:0;background:none;padding:10px 22px;border-radius:40px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
-.freq button[aria-pressed="true"]{background:var(--blush);color:var(--ink)}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;align-items:stretch}
-.plan{background:var(--white);padding:44px 34px 38px;text-align:center;display:flex;flex-direction:column;border-radius:200px 200px 6px 6px;border:1px solid rgba(217,169,168,.45)}
-.plan.feature{background:var(--blush);border-color:var(--blush)}
-.plan .tag{font-family:var(--f-script);color:var(--gold);font-size:1.9rem;height:30px;margin-bottom:6px}
-.plan h3{font-size:1.45rem;letter-spacing:.1em;margin-bottom:6px}
-.plan .fit{color:var(--ink-soft);font-size:.86rem;margin-bottom:22px}
-.price{font-family:var(--f-head);font-size:2.7rem;line-height:1}
-.price small{font-family:var(--f-body);font-size:.8rem;color:var(--ink-soft);letter-spacing:.06em}
-.save{font-size:.76rem;color:var(--sage-deep);min-height:1.4em;margin:6px 0 22px;font-weight:400}
-.plan ul{list-style:none;text-align:left;margin:0 auto 30px;font-size:.92rem;flex:1}
-.plan li{padding:9px 0 9px 26px;border-bottom:1px solid rgba(75,63,61,.08);position:relative}
-.plan li::before{content:"";position:absolute;left:4px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--dusty-rose)}
-.plan.feature li::before{background:var(--white)}
-.plan .btn{align-self:center}
-
-/* ---------- Products ---------- */
-.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:56px}
-.prod{text-align:center}
-.bottle{aspect-ratio:3/4;background:var(--white);display:grid;place-items:center;margin-bottom:18px;position:relative;border-radius:4px}
-.bottle svg{height:78%}
-.prod h3{font-size:1rem;letter-spacing:.12em;margin-bottom:4px}
-.prod p{font-size:.84rem;color:var(--ink-soft)}
-
-/* ---------- Scents ---------- */
-.scents{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(201,137,135,.3)}
-.scent{padding:36px 24px 10px;text-align:center;border-right:1px solid rgba(201,137,135,.3)}
-.scent:last-child{border-right:0}
-.swatch{width:74px;height:74px;border-radius:50%;margin:0 auto 18px}
-.scent .script{font-size:2.2rem;color:var(--ink);display:block;margin-bottom:8px}
-.scent p{font-size:.86rem;color:var(--ink-soft)}
-
-/* ---------- Unboxing ---------- */
-.unbox{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.unbox figure{aspect-ratio:1;overflow:hidden;border-radius:50% 50% 6px 6px}
-.unbox img{width:100%;height:100%;object-fit:cover}
-.unbox h2{margin-bottom:18px}
-.unbox p{color:var(--ink-soft);margin-bottom:16px;max-width:30em}
-.unbox .script{font-size:2.4rem;margin-top:8px}
-
-/* ---------- Reviews ---------- */
-.reviews-sec{background:var(--sage)}
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:54px}
-.quotes blockquote{text-align:center}
-.quotes .stars{color:var(--gold);letter-spacing:.3em;font-size:.9rem;margin-bottom:14px}
-.quotes q{font-family:var(--f-head);font-size:1.08rem;line-height:1.6;display:block;quotes:none}
-.quotes cite{display:block;margin-top:16px;font-style:normal;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-
-/* ---------- FAQ ---------- */
-.faq{max-width:760px;margin:50px auto 0}
-.faq details{border-bottom:1px solid rgba(201,137,135,.35)}
-.faq summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-family:var(--f-head);font-size:1.08rem;letter-spacing:.03em;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--rose-text);font-family:var(--f-body);font-size:1.4rem;transition:transform .25s}
-.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
-.faq details p{padding:0 0 24px;color:var(--ink-soft);max-width:40em}
-
-/* ---------- Newsletter ---------- */
-.news{background:var(--blush);text-align:center}
-.news form{display:flex;max-width:480px;margin:30px auto 0;background:var(--white);border:1px solid var(--dusty-rose);border-radius:40px;padding:4px 6px 4px 20px}
-.news input{flex:1;border:0;background:#FFFCFB;padding:14px 4px;font:inherit;color:var(--ink)}
-.news input::placeholder{color:var(--ink-soft)}
-.news input:focus{outline:none}
-.news button{border:0;background:var(--dusty-rose);border-radius:40px;padding:0 22px !important;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;padding:0 6px;color:var(--ink)}
-.news .msg{margin-top:14px;font-size:.88rem;min-height:1.5em}
-
-/* ---------- Footer ---------- */
-footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color:var(--ink);padding:70px 0 30px}
-.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
-.foot h4{font-family:var(--f-body);font-weight:500;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rose-text);margin-bottom:18px}
-.foot ul{list-style:none}
-.foot li{margin-bottom:9px;font-size:.9rem}
-.foot a{text-decoration:none}
-.foot a:hover{text-decoration:underline;text-underline-offset:4px}
-.foot .script{font-size:2rem;margin-top:10px;color:var(--gold)}
-.legal{margin-top:56px;padding-top:24px;border-top:1px solid rgba(201,137,135,.3);display:flex;justify-content:space-between;font-size:.76rem;flex-wrap:wrap;gap:10px}
-
-/* ---------- Cart drawer ---------- */
-.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,200px);background:var(--blush);color:var(--ink);border:1px solid var(--dusty-rose);padding:16px 26px;border-radius:40px;font-size:.86rem;transition:transform .4s ease;z-index:50;box-shadow:0 10px 30px rgba(201,137,135,.3)}
-.toast{visibility:hidden}
-.toast.show{transform:translate(-50%,0);visibility:visible}
-
-/* ---------- Responsive ---------- */
-@media (max-width:1080px){.nav{gap:18px}.nav a{letter-spacing:.14em}}
-@media (max-width:940px){
-  .nav{display:none}
-  .menu-toggle{display:flex}
-  .nav.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:24px;gap:18px;border-bottom:1px solid rgba(201,137,135,.3)}
-  .brand-mini span{display:none}
-  .band,.unbox{grid-template-columns:1fr}
-  .band figure{min-height:340px}
-  .steps,.plans,.quotes{grid-template-columns:1fr;gap:34px}
-  .steps li::after{display:none}
-  .plans{max-width:420px;margin-left:auto;margin-right:auto}
-  .prod-grid,.scents{grid-template-columns:repeat(2,1fr)}
-  .scent:nth-child(2){border-right:0}
-  .foot{grid-template-columns:1fr 1fr}
+@media (max-width:860px){
+  .cards{grid-template-columns:1fr;max-width:420px;margin-inline:auto}
+  .split{grid-template-columns:1fr}
 }
 @media (max-width:520px){
-  .foot{grid-template-columns:1fr}
-  .head-actions .label{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .lockup .arc{stroke-dashoffset:0}
-  .lockup .mono,.lockup .leaf{opacity:1}
+  .field-row{flex-direction:column;border-radius:24px;padding:8px}
+  .field-row input[type=email]{text-align:center}
+  .field-row .btn{width:100%}
+  .sparkle{display:none}
 }
 </style>
 </head>
 <body>
-
-<!-- Reusable SVG symbols -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.2 0 3.7 1.3 5.3 3.2 1.6-1.9 3.1-3.2 5.3-3.2 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></symbol>
     <symbol id="sprig" viewBox="0 0 60 120">
@@ -270,41 +174,26 @@ footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color
     </symbol>
   </defs>
 </svg>
-
-<div class="announce">Free delivery on every subscription box · Pause or cancel anytime</div>
-
-<!-- SHOPIFY: sections/header.liquid -->
+<div class="announce">Launching January 2027 &nbsp;·&nbsp; <a href="#register">Register your interest</a></div>
 <header class="site">
   <div class="wrap head-in">
-    <button class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false" id="menuBtn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-    </button>
-    <ul class="nav" id="nav">
-      <li><a href="my-story.html">My story</a></li>
-      <li><a href="#how">How it works</a></li>
-      <li><a href="#plans">Subscribe</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <a href="#top" class="brand-mini" aria-label="The Clean Home Collection home">
-      <svg><use href="#monogram"/></svg>
+    <nav class="nav-simple" aria-label="Main">
+      <a href="my-story.html">My story</a>
+    </nav>
+    <a href="index.html" class="brand-mini" aria-label="The Clean Home Collection home">
+      <svg aria-hidden="true"><use href="#monogram"/></svg>
       <span>THE CLEAN HOME</span>
     </a>
     <div class="head-actions">
-      <a href="#" class="icon-btn" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span class="label">Account</span></a>
-      <button class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      <a class="btn btn-sm" href="#register" data-focus-signup><span class="long">Register interest</span><span class="short">Register</span></a>
     </div>
   </div>
 </header>
-
 <main id="top">
-
-<!-- SHOPIFY: sections/hero.liquid -->
 <section class="hero">
-  <svg class="sparkle" style="top:18%;left:14%;width:16px" viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
-  <svg class="sparkle" style="top:32%;right:13%;width:12px" viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
-  <svg class="sparkle" style="top:12%;right:22%;width:9px" viewBox="0 0 20 20"><path fill="currentColor" d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
-
+  <svg class="sparkle" style="top:14%;left:13%;width:15px" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+  <svg class="sparkle" style="top:30%;right:12%;width:12px" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+  <svg class="sparkle" style="top:8%;right:22%;width:9px" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
   <div class="wrap">
     <svg class="lockup" viewBox="0 0 430 250" role="img" aria-label="SC monogram">
       <path class="arc" d="M98 245 A132 132 0 1 1 332 245" fill="none" stroke="#C7A061" stroke-width="1.2"/>
@@ -318,265 +207,158 @@ footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color
         <use href="#heart" x="238" y="140" width="24" height="24" style="color:#C98987"/>
       </g>
     </svg>
-    <h1>THE CLEAN HOME</h1>
-    <p class="spaced coll">Collection</p>
-    <div class="heart-rule" aria-hidden="true"><svg><use href="#heart"/></svg></div>
-    <p class="script">Beautifully Clean, Every Day</p>
-    <p class="lede">Gently scented, plant-based cleaning essentials in refillable glass — delivered to your door each month, so your home is always stocked and always lovely.</p>
-    <div class="hero-ctas">
-      <a href="#plans" class="btn">Start my subscription</a>
-      <a href="#products" class="btn ghost">See what's inside</a>
+    <h1 class="brandline">THE CLEAN HOME</h1>
+    <p class="coll">Collection</p>
+
+    <p class="coming"><span class="script">Coming soon</span><span class="date">January 2027</span></p>
+    <p class="lede">Beautiful cleaning products for real family life, delivered to your door every month.</p>
+
+    <div class="signup" id="register">
+      <h2>Register your interest</h2>
+      <form id="signupForm" action="#" method="post" target="signupFrame" novalidate>
+        <div class="field-row">
+          <label for="email" class="sr">Email address</label>
+          <input id="email" type="email" name="fields[email]" placeholder="Your email address" autocomplete="email" inputmode="email" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="btn" type="submit" id="signupBtn">Register my interest</button>
+        </div>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+      <ul class="perks">
+        <li><svg aria-hidden="true"><use href="#heart"/></svg>Be the first to know when we launch</li>
+        <li><svg aria-hidden="true"><use href="#heart"/></svg>Early access to our first boxes</li>
+        <li><svg aria-hidden="true"><use href="#heart"/></svg>Help choose our launch scents</li>
+      </ul>
+      <p class="consent">By registering, you agree to receive emails from The Clean Home Collection about our launch and offers. You can unsubscribe at any time. Read our <a href="privacy.html">privacy notice</a>.</p>
+      <div class="thanks" id="thanks" tabindex="-1">
+        <p class="script">Thank you!</p>
+        <p>You're nearly on the list. Check your inbox, and your spam folder, for an email asking you to confirm your address.</p>
+      </div>
+      <noscript><p class="consent">Please turn on JavaScript to register your interest.</p></noscript>
     </div>
   </div>
 </section>
+<iframe name="signupFrame" id="signupFrame" title="Sign-up" hidden></iframe>
 
-<!-- SHOPIFY: sections/image-with-text.liquid -->
-<section class="band">
-  <figure><img loading="lazy" src="images/products.jpg" alt="Glass spray bottle of multi-purpose cleaner and a hand wash pump bottle, both with Clean Home Collection labels"></figure>
-  <div class="copy">
-    <h2>Made to live on your counter</h2>
-    <p>No more hiding the cleaning spray under the sink. Every bottle is heavy glass with a soft, pretty label — the kind you'll want to leave out.</p>
-    <p>Your first box includes the bottles. After that, we send concentrated refills, so you pour, top up with water and keep going.</p>
-    <a href="#plans" class="btn ghost" style="align-self:flex-start;margin-top:12px">Choose a plan</a>
-  </div>
-</section>
-
-<!-- SHOPIFY: sections/rich-text.liquid (Our story) -->
-<section class="pad story" id="story">
-  <svg class="sprig-l" aria-hidden="true"><use href="#sprig"/></svg>
-  <svg class="sprig-r" aria-hidden="true"><use href="#sprig"/></svg>
-  <div class="wrap story-in">
-    <h2>Cleaning for real family life</h2>
-    <div class="heart-rule" aria-hidden="true"><svg><use href="#heart"/></svg></div>
-    <p>The Clean Home Collection was created by a busy mum of five — four boys and one girl — who knows only too well that keeping a family home clean can feel like a never-ending job.</p>
-    <p>With five children, there are always fingerprints, spills, muddy footprints, crumbs, toys and the inevitable mess that comes with having a busy family home.</p>
-    <p>I wanted cleaning products that didn’t just do the job, but made cleaning feel a little easier, a little more enjoyable and a lot more beautiful.</p>
-    <p>So I created The Clean Home Collection.</p>
-    <p>A collection of cleaning products inspired by real family life — products that are effective, beautifully presented and made for homes that are actually lived in.</p>
-    <blockquote><p>Because I don’t believe a clean home has to mean a perfect home.</p></blockquote>
-    <p>It’s about creating a home that feels fresh, comfortable and cared for — even when life is busy and the house has just been turned upside down again.</p>
-    <p>The Clean Home Collection is made for real homes, real families and real life.</p>
-    <p class="signoff">From my busy family to yours <svg aria-hidden="true"><use href="#heart"/></svg></p>
-  </div>
-</section>
-
-<!-- SHOPIFY: sections/multicolumn.liquid -->
-<section class="pad center" id="how">
+<section class="coming-next">
   <div class="wrap">
-    <h2>How it works</h2>
-    <p class="lede">Three simple steps, then your home looks after itself.</p>
-    <ol class="steps">
-      <li><h3>Pick your box</h3><p>Choose a plan and your favourite scent. Change either whenever you like.</p></li>
-      <li><h3>We deliver monthly</h3><p>Your box arrives in the first week of each month, gift-wrapped in blush tissue.</p></li>
-      <li><h3>Refill &amp; enjoy</h3><p>Top up your glass bottles and recycle the refill pouches. Pause or skip anytime.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- SHOPIFY: product page with subscription app (selling plans) -->
-<section class="pad center plans-sec" id="plans">
-  <div class="wrap">
-    <h2>Choose your box</h2>
-    <p class="lede">Every plan ships free. Save more when you receive every two months.</p>
-    <div class="freq" role="group" aria-label="Delivery frequency">
-      <button aria-pressed="true" data-freq="monthly">Every month</button>
-      <button aria-pressed="false" data-freq="bi">Every 2 months</button>
-    </div>
-    <div class="plans">
-      <article class="plan">
-        <div class="tag"></div>
-        <h3>The Petite</h3>
-        <p class="fit">For flats and small homes</p>
-        <div class="price" data-m="24" data-b="44">£24<small> / month</small></div>
-        <p class="save"></p>
-        <ul>
-          <li>Multi-purpose cleaner</li>
-          <li>Hand wash</li>
-          <li>1 scent of your choice</li>
-        </ul>
-        <button class="btn ghost add" data-name="The Petite">Subscribe</button>
-      </article>
-      <article class="plan feature">
-        <div class="tag">Most loved</div>
-        <h3>The Classic</h3>
-        <p class="fit">For family homes</p>
-        <div class="price" data-m="38" data-b="70">£38<small> / month</small></div>
-        <p class="save"></p>
-        <ul>
-          <li>Multi-purpose cleaner</li>
-          <li>Hand wash &amp; washing-up liquid</li>
-          <li>Glass &amp; mirror spray</li>
-          <li>Mix two scents</li>
-        </ul>
-        <button class="btn add" data-name="The Classic">Subscribe</button>
-      </article>
-      <article class="plan">
-        <div class="tag"></div>
-        <h3>The Luxe</h3>
-        <p class="fit">The full home, every room</p>
-        <div class="price" data-m="54" data-b="100">£54<small> / month</small></div>
-        <p class="save"></p>
-        <ul>
-          <li>Everything in The Classic</li>
-          <li>Bathroom &amp; tile cleaner</li>
-          <li>Linen &amp; room mist</li>
-          <li>A surprise treat each box</li>
-        </ul>
-        <button class="btn ghost add" data-name="The Luxe">Subscribe</button>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- SHOPIFY: sections/featured-collection.liquid -->
-<section class="pad center" id="products">
-  <div class="wrap">
-    <h2>What's inside</h2>
-    <p class="lede">Plant-based formulas that are tough on mess and gentle on hands, pets and surfaces.</p>
-    <div class="prod-grid">
-      <div class="prod">
-        <div class="bottle"><svg viewBox="0 0 80 150"><path d="M30 10h22v8l10 6-4 4-6-3v10H30z" fill="#fff" stroke="#D9A9A8"/><rect x="18" y="38" width="44" height="106" rx="8" fill="#FBF6F4" stroke="#D9A9A8"/><rect x="24" y="64" width="32" height="48" fill="#fff" stroke="#EBD6D2"/><use href="#monogram" x="30" y="68" width="20" height="20"/></svg></div>
-        <h3>MULTI-PURPOSE</h3><p>Kitchens, tables, worktops</p>
+    <h2>What's coming</h2>
+    <div class="cards">
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 18h32v22H8z"/><path d="M6 12h36v6H6z"/><path d="M24 12v28"/><path d="M24 12c-3-6-10-6-10-1s7 1 10 1c3 0 10 4 10-1s-7-5-10 1z"/></svg>
+        <h3>A monthly box</h3>
+        <p>Cleaning essentials and home fragrance, delivered to your door each month, so you never run out.</p>
       </div>
-      <div class="prod">
-        <div class="bottle"><svg viewBox="0 0 80 150"><path d="M36 6h8v12h14v5H36z" fill="#C7A061"/><rect x="34" y="23" width="12" height="10" fill="#C7A061"/><rect x="18" y="33" width="44" height="111" rx="10" fill="#F4ECDA" stroke="#DCC5AE"/><rect x="24" y="62" width="32" height="48" fill="#fff" stroke="#EBD6D2"/><use href="#monogram" x="30" y="66" width="20" height="20"/></svg></div>
-        <h3>HAND WASH</h3><p>Soft, rich and moisturising</p>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 42c-8-6-12-12-12-19 0-6 5-10 12-3 7-7 12-3 12 3 0 7-4 13-12 19z"/><path d="M24 4v6M14 7l3 5M34 7l-3 5"/></svg>
+        <h3>Scents you choose</h3>
+        <p>Fresh, floral, cosy or fragrance-free. Everyone who registers gets a vote on our launch scents.</p>
       </div>
-      <div class="prod">
-        <div class="bottle"><svg viewBox="0 0 80 150"><path d="M30 10h22v8l10 6-4 4-6-3v10H30z" fill="#fff" stroke="#8FA08C"/><rect x="18" y="38" width="44" height="106" rx="8" fill="#EEF2ED" stroke="#B8C4B5"/><rect x="24" y="64" width="32" height="48" fill="#fff" stroke="#DDE3DA"/><use href="#monogram" x="30" y="68" width="20" height="20"/></svg></div>
-        <h3>GLASS &amp; MIRROR</h3><p>Streak-free shine</p>
-      </div>
-      <div class="prod">
-        <div class="bottle"><svg viewBox="0 0 80 150"><rect x="34" y="8" width="12" height="16" rx="2" fill="#C7A061"/><rect x="24" y="24" width="32" height="120" rx="6" fill="#FBEFEC" stroke="#D9A9A8"/><rect x="28" y="60" width="24" height="44" fill="#fff" stroke="#EBD6D2"/><use href="#monogram" x="31" y="64" width="18" height="18"/></svg></div>
-        <h3>LINEN MIST</h3><p>For beds, sofas and curtains</p>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M19 6h10v6H19z"/><path d="M17 12h14l3 8v20a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2V20z"/><path d="M18 26h12v8H18z"/></svg>
+        <h3>Pretty enough to leave out</h3>
+        <p>Beautiful bottles you'll want on show, with refills to top them up each month.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SHOPIFY: sections/multicolumn.liquid (scents) -->
-<section class="pad center" style="padding-top:0">
-  <div class="wrap">
-    <h2>Four signature scents</h2>
-    <p class="lede">Choose one for your whole box, or mix and match on The Classic and The Luxe.</p>
-    <div class="scents">
-      <div class="scent"><div class="swatch" style="background:#F5F1EA;border:1px solid #E6DCD2"></div><span class="script">Fresh Linen</span><p>Clean cotton, white musk</p></div>
-      <div class="scent"><div class="swatch" style="background:var(--blush)"></div><span class="script">Peony Blush</span><p>Peony, pink pepper, pear</p></div>
-      <div class="scent"><div class="swatch" style="background:var(--sage)"></div><span class="script">Sage Garden</span><p>Sage, eucalyptus, green tea</p></div>
-      <div class="scent"><div class="swatch" style="background:var(--taupe)"></div><span class="script">Warm Cashmere</span><p>Vanilla, amber, sandalwood</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SHOPIFY: sections/image-with-text.liquid (reversed) -->
-<section class="pad" style="background:var(--white)">
-  <div class="wrap unbox">
-    <figure><img loading="lazy" src="images/gift-box.jpg" alt="Open Clean Home Collection gift box with blush tissue paper and a round gold seal sticker"></figure>
+<section class="story-teaser">
+  <div class="wrap split">
+    <figure><img src="images/products.jpg" alt="Multi-purpose cleaner and hand wash in Clean Home Collection bottles" loading="lazy" width="496" height="428"></figure>
     <div>
-      <h2>A little gift to yourself, every month</h2>
-      <p>Each box arrives wrapped in blush tissue and sealed with our gold sticker. Everything inside is recyclable, from the box to the refill pouches.</p>
-      <p>Buying for someone else? Send a three, six or twelve month gift subscription with a handwritten note.</p>
-      <p class="script">with love, from our home to yours</p>
-      <a href="#plans" class="btn" style="margin-top:22px">Give as a gift</a>
+      <p class="script">Made for real family life</p>
+      <p class="body">The Clean Home Collection was created by a busy mum of five (four boys and one girl) who knows only too well that keeping a family home clean can feel like a never-ending job.</p>
+      <p class="body">I wanted cleaning products that didn't just do the job, but made cleaning feel a little easier, a little more enjoyable and a lot more beautiful.</p>
+      <a class="btn ghost" href="my-story.html">Read my story</a>
     </div>
   </div>
 </section>
 
-<!-- SHOPIFY: sections/testimonials (or reviews app block) -->
-<section class="pad center reviews-sec">
+<section class="closing">
   <div class="wrap">
-    <h2>Loved in homes like yours</h2>
-    <div class="quotes">
-      <blockquote><div class="stars" aria-label="5 stars">★★★★★</div><q>The bottles are so pretty I've stopped hiding them. The Fresh Linen spray makes the whole kitchen smell lovely.</q><cite>Sophie, Leeds</cite></blockquote>
-      <blockquote><div class="stars" aria-label="5 stars">★★★★★</div><q>I never run out of hand wash any more. Opening the box each month genuinely feels like a treat.</q><cite>Hannah, Bristol</cite></blockquote>
-      <blockquote><div class="stars" aria-label="5 stars">★★★★★</div><q>Safe around my toddler and the dog, and it actually cleans. Skipping a month is one click.</q><cite>Priya, Manchester</cite></blockquote>
-    </div>
+    <h2>Be the first to know</h2>
+    <p>Register your interest and we'll email you as soon as the first boxes are ready in January 2027.</p>
+    <a class="btn" href="#register" data-focus-signup>Register your interest</a>
   </div>
 </section>
-
-<!-- SHOPIFY: sections/collapsible-content.liquid -->
-<section class="pad" id="faq">
-  <div class="wrap">
-    <div class="center"><h2>Questions, answered</h2></div>
-    <div class="faq">
-      <details><summary>Can I pause, skip or cancel?</summary><p>Yes, anytime from your account. Changes made before the 25th apply to next month's box. There are no cancellation fees.</p></details>
-      <details><summary>When will my box arrive?</summary><p>Boxes ship in the first week of each month. Your first box ships within two working days of subscribing.</p></details>
-      <details><summary>Are the products safe for children and pets?</summary><p>Our formulas are plant-based and free from bleach, ammonia and phosphates. As with any cleaner, keep bottles out of reach and let surfaces dry before little ones or pets touch them.</p></details>
-      <details><summary>How do refills work?</summary><p>Your first box includes glass bottles. Later boxes contain refill pouches: pour into your bottle, top up with water where marked, and recycle the pouch.</p></details>
-      <details><summary>Can I change my scent?</summary><p>Of course. Update your scent in your account before the 25th and your next box will follow.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- SHOPIFY: sections/newsletter.liquid -->
-<section class="pad news">
-  <div class="wrap">
-    <h2>Join the Clean Home list</h2>
-    <p class="lede" style="margin:14px auto 0">Get 15% off your first box, plus cleaning tips and new scent releases.</p>
-    <form id="newsForm" novalidate>
-      <label for="email" class="sr">Email address</label>
-      <input id="email" type="email" placeholder="Your email address" autocomplete="email" required>
-      <button type="submit">Sign up</button>
-    </form>
-    <p class="msg" id="newsMsg" role="status"></p>
-  </div>
-</section>
-
 </main>
-
-<!-- SHOPIFY: sections/footer.liquid -->
-<footer>
+<footer class="site">
   <div class="wrap">
-    <div class="foot">
+    <div class="foot-simple">
       <div>
-        <p style="font-family:var(--f-head);letter-spacing:.14em;font-size:1.1rem">THE CLEAN HOME</p>
-        <p class="spaced" style="color:var(--ink-soft);margin-top:4px">Collection</p>
+        <p class="fs-name">THE CLEAN HOME</p>
+        <p class="fs-coll">Collection</p>
         <p class="script">Beautifully Clean, Every Day</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="#plans">Subscriptions</a></li><li><a href="#products">Products</a></li><li><a href="#">Gift a box</a></li><li><a href="#">Refills</a></li></ul></div>
-      <div><h4>Help</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#">Delivery</a></li><li><a href="#">Manage subscription</a></li><li><a href="#">Contact us</a></li></ul></div>
-      <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">Pinterest</a></li></ul></div>
+      <ul class="fs-links">
+        <li><a href="#register" data-focus-signup>Register your interest</a></li>
+        <li><a href="my-story.html">My story</a></li>
+        <li><a href="privacy.html">Privacy notice</a></li>
+        <li><a href="mailto:info@thecleanhomecollection.co.uk">info@thecleanhomecollection.co.uk</a></li>
+      </ul>
     </div>
-    <div class="legal"><span>© 2026 The Clean Home Collection</span><span><a href="#">Privacy</a> &nbsp;&nbsp; <a href="#">Terms</a></span></div>
+    <div class="legal"><span>© 2026 The Clean Home Collection</span><span>Launching January 2027</span></div>
   </div>
 </footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
 <script>
-// Mobile menu
-const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
-menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded',false)}));
+/* ===== Sign-up settings =====
+   SIGNUP_ACTION: the MailerLite form address (Forms > Embedded forms >
+   Website waiting list > Overview > HTML code, the action= line).
+   If it is ever left empty, the form stops collecting emails. */
+const SIGNUP_ACTION = "https://assets.mailerlite.com/jsonp/2684811/forms/200457260457002035/subscribe";
+/* Tells MailerLite the form was seen, so its dashboard can show your sign-up rate. */
+const FORM_VIEW_PING = "https://assets.mailerlite.com/jsonp/2684811/forms/200457260457002035/takel";
+try { fetch(FORM_VIEW_PING, {mode:"no-cors"}).catch(function(){}); } catch (e) {}
 
-// Frequency toggle
-let freq='monthly';
-function renderPrices(){
-  document.querySelectorAll('.plan').forEach(p=>{
-    const el=p.querySelector('.price'),m=+el.dataset.m,b=+el.dataset.b;
-    if(freq==='monthly'){el.innerHTML=`£${m}<small> / month</small>`;p.querySelector('.save').textContent='';}
-    else{el.innerHTML=`£${b}<small> / 2 months</small>`;p.querySelector('.save').textContent=`You save £${m*2-b} each delivery`;}
+(function(){
+  const form = document.getElementById('signupForm');
+  const email = document.getElementById('email');
+  const btn = document.getElementById('signupBtn');
+  const msg = document.getElementById('formMsg');
+  const wrap = document.getElementById('register');
+  const frame = document.getElementById('signupFrame');
+  const hp = document.getElementById('website');
+  const valid = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  let sending = false;
+
+  function done(){
+    wrap.classList.add('done');
+    document.getElementById('thanks').focus({preventScroll:true});
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (sending) return;
+    msg.className = 'form-msg'; msg.textContent = '';
+    const v = email.value.trim();
+    if (!valid(v)) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Enter a full email address, like name@example.com.';
+      email.focus(); return;
+    }
+    if (hp.value) { done(); return; }
+    if (!SIGNUP_ACTION) {
+      msg.textContent = 'Registration opens in the next few days. Please check back soon.';
+      return;
+    }
+    sending = true; btn.disabled = true; btn.textContent = 'Registering…';
+    email.value = v;
+    form.action = SIGNUP_ACTION;
+    let finished = false;
+    const finish = () => { if (finished) return; finished = true; done(); };
+    frame.addEventListener('load', finish, {once:true});
+    setTimeout(finish, 4000);
+    HTMLFormElement.prototype.submit.call(form);
   });
-}
-document.querySelectorAll('.freq button').forEach(b=>b.addEventListener('click',()=>{
-  freq=b.dataset.freq;
-  document.querySelectorAll('.freq button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  renderPrices();
-}));
 
-// Add to cart (placeholder — Shopify will handle this)
-let count=0;const toast=document.getElementById('toast');let t;
-document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>{
-  count++;document.getElementById('cartCount').textContent=count;
-  toast.textContent=`${b.dataset.name} added to your cart (${freq==='monthly'?'every month':'every 2 months'})`;
-  toast.classList.add('show');clearTimeout(t);t=setTimeout(()=>toast.classList.remove('show'),2800);
-}));
-
-// Newsletter
-document.getElementById('newsForm').addEventListener('submit',e=>{
-  e.preventDefault();const v=document.getElementById('email').value.trim(),m=document.getElementById('newsMsg');
-  m.textContent=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)?'Thank you! Check your inbox for your 15% code.':'Enter a valid email address, like name@example.com.';
-});
+  document.querySelectorAll('[data-focus-signup]').forEach(a => a.addEventListener('click', () => {
+    setTimeout(() => { if (!wrap.classList.contains('done')) email.focus({preventScroll:true}); }, 450);
+  }));
+  if (location.hash === '#register') setTimeout(() => email.focus({preventScroll:true}), 300);
+})();
 </script>
 </body>
 </html>

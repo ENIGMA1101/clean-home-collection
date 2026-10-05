@@ -7,7 +7,7 @@
 <meta name="supported-color-schemes" content="light">
 <meta name="theme-color" content="#FAF1ED">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<title>My Story — The Clean Home Collection</title>
+<title>My Story | The Clean Home Collection</title>
 <meta name="description" content="Created by a mum of five, for the beautiful chaos of family life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -285,6 +285,42 @@ footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color
   .split figure{max-width:420px;margin:0 auto}
   .story-hero .sprig-l,.story-hero .sprig-r{display:none}
 }
+
+/* ---- simplified header & footer (coming-soon phase) ---- */
+
+.announce{background:var(--dusty-rose);color:var(--ink);text-align:center;padding:9px 16px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.announce a{text-underline-offset:3px}
+header.site{position:sticky;top:0;z-index:20;background:rgba(250,241,237,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(185,112,109,.18)}
+.head-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;gap:12px}
+.nav-simple{display:flex;gap:24px}
+.nav-simple a{text-decoration:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.nav-simple a:hover,.nav-simple a[aria-current="page"]{color:var(--rose-text)}
+.brand-mini{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mini svg{width:44px;height:44px}
+.brand-mini span{font-family:var(--f-head);font-size:.95rem;letter-spacing:.14em;white-space:nowrap}
+.head-actions{display:flex;justify-content:flex-end}
+.btn-sm{padding:10px 18px;font-size:.66rem;letter-spacing:.16em}
+.btn-sm .short{display:none}
+
+footer.site{background:var(--paper-2);border-top:1px solid rgba(185,112,109,.25);padding-block:56px 26px}
+.foot-simple{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+.fs-name{font-family:var(--f-head);letter-spacing:.14em;font-size:1.1rem}
+.fs-coll{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.foot-simple .script{font-size:2rem;margin-top:10px}
+.fs-links{list-style:none;display:grid;gap:10px;font-size:.9rem}
+.fs-links a{text-decoration:none}
+.fs-links a:hover{color:var(--rose-text);text-decoration:underline;text-underline-offset:4px}
+.legal{margin-top:40px;padding-top:20px;border-top:1px solid rgba(185,112,109,.25);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--ink-soft)}
+
+@media (max-width:760px){
+  .brand-mini span{display:none}
+}
+@media (max-width:440px){
+  .announce{font-size:.62rem;letter-spacing:.08em;padding-inline:10px}
+  .btn-sm .long{display:none}.btn-sm .short{display:inline}
+  .nav-simple{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -310,31 +346,26 @@ footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color
   </defs>
 </svg>
 
-<div class="announce">Free delivery on every subscription box · Pause or cancel anytime</div>
+<div class="announce">Launching January 2027 &nbsp;·&nbsp; <a href="index.html#register">Register your interest</a></div>
 
-<!-- SHOPIFY: sections/header.liquid -->
 <header class="site">
   <div class="wrap head-in">
-    <button class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false" id="menuBtn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-    </button>
-    <ul class="nav" id="nav">
-      <li><a href="my-story.html" aria-current="page">My story</a></li>
-      <li><a href="index.html#how">How it works</a></li>
-      <li><a href="index.html#plans">Subscribe</a></li>
-      <li><a href="index.html#products">Products</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-    </ul>
+    <nav class="nav-simple" aria-label="Main">
+      <a href="my-story.html" aria-current="page">My story</a>
+    </nav>
     <a href="index.html" class="brand-mini" aria-label="The Clean Home Collection home">
-      <svg><use href="#monogram"/></svg>
+      <svg aria-hidden="true"><use href="#monogram"/></svg>
       <span>THE CLEAN HOME</span>
     </a>
     <div class="head-actions">
-      <a href="#" class="icon-btn" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span class="label">Account</span></a>
-      <button class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      <a class="btn btn-sm" href="index.html#register" data-focus-signup><span class="long">Register interest</span><span class="short">Register</span></a>
     </div>
   </div>
 </header>
+
+
+
+
 
 <main id="top">
 
@@ -393,36 +424,30 @@ footer{background:var(--paper-2);border-top:1px solid rgba(201,137,135,.3);color
 <section class="pad welcome">
   <div class="wrap">
     <p class="script">Welcome to The Clean Home Collection <svg aria-hidden="true"><use href="#heart"/></svg></p>
-    <p class="lede">From my busy family to yours — choose your first box and make those little everyday resets a lot more lovely.</p>
-    <a href="index.html#plans" class="btn">Choose my box</a>
+    <p class="lede">From my busy family to yours. We launch in January 2027: register your interest to be the first to know.</p>
+    <a href="index.html#register" class="btn">Register your interest</a>
   </div>
 </section>
 
 </main>
 
-<!-- SHOPIFY: sections/footer.liquid -->
-<footer>
+<footer class="site">
   <div class="wrap">
-    <div class="foot">
+    <div class="foot-simple">
       <div>
-        <p style="font-family:var(--f-head);letter-spacing:.14em;font-size:1.1rem">THE CLEAN HOME</p>
-        <p class="spaced" style="color:var(--ink-soft);margin-top:4px">Collection</p>
+        <p class="fs-name">THE CLEAN HOME</p>
+        <p class="fs-coll">Collection</p>
         <p class="script">Beautifully Clean, Every Day</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="index.html#plans">Subscriptions</a></li><li><a href="index.html#products">Products</a></li><li><a href="#">Gift a box</a></li><li><a href="#">Refills</a></li></ul></div>
-      <div><h4>Help</h4><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="#">Delivery</a></li><li><a href="#">Manage subscription</a></li><li><a href="#">Contact us</a></li></ul></div>
-      <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">Pinterest</a></li></ul></div>
+      <ul class="fs-links">
+        <li><a href="index.html#register" data-focus-signup>Register your interest</a></li>
+        <li><a href="my-story.html">My story</a></li>
+        <li><a href="privacy.html">Privacy notice</a></li>
+        <li><a href="mailto:info@thecleanhomecollection.co.uk">info@thecleanhomecollection.co.uk</a></li>
+      </ul>
     </div>
-    <div class="legal"><span>© 2026 The Clean Home Collection</span><span><a href="#">Privacy</a> &nbsp;&nbsp; <a href="#">Terms</a></span></div>
+    <div class="legal"><span>© 2026 The Clean Home Collection</span><span>Launching January 2027</span></div>
   </div>
 </footer>
-
-<script>
-// Mobile menu
-const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
-menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded',false)}));
-
-</script>
 </body>
 </html>
